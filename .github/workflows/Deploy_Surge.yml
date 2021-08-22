@@ -37,6 +37,8 @@ jobs:
        # Build React App with Yarn
       - name: Build React App
         run: yarn build
+        
+             npx browserslist@latest --update-db
        
        # Install Surge
       - name: Install Surge
