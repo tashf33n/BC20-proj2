@@ -37,13 +37,22 @@ jobs:
         with:
           cmd: install # will run `yarn install` command
        
-       # Update browser Data
-      - name: Install Surge
+       
+       # Update browser Data       
+         
+      - name: Update Browser Dependencies
         run: npx browserslist@latest --update-db 
+
+       # Run Yarn to add latest version of browser dependibilities       
+         
+      - name: Insall Yarn add
+        run: yarn add -W caniuse-lite 
       
        # Build React App with Yarn
       - name: Build React App
         run: yarn build
+        
+        
        
        # Install Surge
       - name: Install Surge
