@@ -19,8 +19,6 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-npx browserslist@latest --update-db
-
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -31,6 +29,7 @@ npx browserslist@latest --update-db
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
+              npm --depth 9999 update caniuse-lite
           
        # Install Yarn
       - name: Install Yarn
