@@ -33,12 +33,12 @@ jobs:
         uses: borales/actions-yarn@v2.1.0
         with:
           cmd: install # will run `yarn install` command
-        
+     
+npx browserslist@latest --update-db
+
        # Build React App with Yarn
       - name: Build React App
         run: yarn build
-        
-             npx browserslist@latest --update-db
        
        # Install Surge
       - name: Install Surge
