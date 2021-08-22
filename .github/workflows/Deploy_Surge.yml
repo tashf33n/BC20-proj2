@@ -29,14 +29,18 @@ jobs:
         uses: actions/setup-node@v2-beta
         with:
           node-version: 12
-          run: npm --depth 9999 update caniuse-lite
           
+        
        # Install Yarn
       - name: Install Yarn
         uses: borales/actions-yarn@v2.1.0
         with:
           cmd: install # will run `yarn install` command
-                                   
+       
+       # Update browser Data
+      - name: Install Surge
+        run: npx browserslist@latest --update-db 
+      
        # Build React App with Yarn
       - name: Build React App
         run: yarn build
